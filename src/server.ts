@@ -110,7 +110,7 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
     // const spawnOptions = workspace.rootPath ? { cwd: workspace.rootPath } : undefined;
 
     const args = [Uri.parse(textDocument.uri).fsPath,
-        '--export-fixes=-', '-header-filter=.*'];
+        '--export-fixes=-', '-header-filter=.*', '-p=build'];
 
     configuration.systemIncludePath.forEach(path => {
         const arg = '-extra-arg=-isystem' + path;
